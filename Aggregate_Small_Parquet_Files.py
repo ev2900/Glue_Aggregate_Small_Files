@@ -17,8 +17,8 @@ job.init(args['JOB_NAME'], args)
 logger = glueContext.get_logger()
 
 # Configuration information
-s3_bucket_name = 'fdfsd4534' # Do not include trailing / or s3://
-prefix = 'sampleDF' # Do not include trailing / 
+s3_bucket_name = '<s3_bucket_name>' # Do not include trailing / or s3://
+prefix = '<path_to_prefix>' # Do not include trailing / 
 target_file_size_in_bytes = 536870912  # 536,870,912 (.5 GB) - 1,073,741,824 (1 GB) is recomended
 
 # Validate configuration information
