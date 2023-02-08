@@ -29,4 +29,4 @@ jobs:
           aws-region: us-east-1
           
       - name: Upload Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml to S3
-        run: aws s3 cp /home/runner/work/CloudFormation_Examples/CloudFormation_Examples/OpenSearch\ Demo/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml s3://sharkech-public/misc-public/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml
+        run: aws s3 cp /home/runner/work/Glue_Aggregate_Small_Files/Glue_Aggregate_Small_Files/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml s3://sharkech-public/misc-public/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml
