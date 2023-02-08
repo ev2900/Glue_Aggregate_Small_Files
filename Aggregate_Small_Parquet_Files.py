@@ -44,11 +44,11 @@ target_number_of_files =  math.ceil(total_prefix_size / target_file_size_in_byte
 
 logger.info('Target number of files: ' + str(target_number_of_files))
 
-# Read the partition and coalesce the dataframe to the target number of file
+# Read the prefix and coalesce the dataframe to the target number of file
 prefix_df = spark.read.parquet('s3://' + s3_bucket_name + '/' + prefix + '/*')
 prefix_df = prefix_df.coalesce(target_number_of_files)
 
-# Write data to a new temp partition
+# Write data to a new temp prefix
 prefix_df.write.parquet('s3://' + s3_bucket_name + '/' + prefix + '_temp/', mode = "overwrite")
 
 logger.info('Coalesced data to prefix: ' + prefix + '_temp/')
@@ -59,7 +59,7 @@ for my_bucket_object in my_bucket.objects.filter(Prefix=prefix + '/'):
 
 logger.info('Deleted prefix: ' + prefix + '/')
 
-# 'Rename' the temp partition
+# 'Rename' the temp prefix
 for my_bucket_object in my_bucket.objects.filter(Prefix=prefix + '_temp/'):
     old_source = {'Bucket': s3_bucket_name, 'Key': my_bucket_object.key}
     new_key = my_bucket_object.key.replace(prefix + '_temp/', prefix + '/', 1)
