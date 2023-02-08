@@ -4,5 +4,5 @@ When storing data in S3 it is important to consider the size of files you store 
 
 This repository provides a PySpark script [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/Aggregate_Small_Parquet_Files.py)  that can consolidate small parquet files in an S3 prefix into larger parquet files of a target file size.
 
-## How to use the Aggregate_Small_Parquet_Files script
+## How to use the aggregate small parquet files script
 
