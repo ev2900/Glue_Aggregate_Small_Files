@@ -17,15 +17,17 @@ job.init(args['JOB_NAME'], args)
 logger = glueContext.get_logger()
 
 # Configuration information
-s3_bucket_name = 'fdfsd4534'
-prefix = 'sampleDF'
+s3_bucket_name = 'fdfsd4534' # Do not include trailing / or s3://
+prefix = 'sampleDF' # Do not include trailing / 
 target_file_size_in_bytes = 536870912  # 536,870,912 (.5 GB) - 1,073,741,824 (1 GB) is recomended
+
+# Validate configuration information
+s3_bucket_name = s3_bucket_name.rstrip()
+prefix = prefix.rstrip()
 
 # Calculate the target number of files
 import boto3
 import math
-
-session = boto3.Session()
 
 session = boto3.Session()
 s3 = session.resource('s3')
@@ -36,6 +38,7 @@ total_prefix_size = 0
 for my_bucket_object in my_bucket.objects.filter(Prefix=prefix + '/'):
     object = s3.Object(s3_bucket_name, my_bucket_object.key)
     total_prefix_size = total_prefix_size + object.content_length
+    # Optional - log each file + size in the prefix
     # logger.info(my_bucket_object.key + ": " + str(object.content_length) + " bytes")
 
 logger.info('Total prefix size of ' + prefix + '/: ' + str(total_prefix_size) + ' bytes')
@@ -71,6 +74,4 @@ logger.info('Copied prefix: ' + prefix + '_temp/ to prefix' + prefix + '/')
 for my_bucket_object in my_bucket.objects.filter(Prefix=prefix + '_temp/'):
     my_bucket_object.delete()
 
-logger.info('Deleted prefix: ' + prefix + '_temp/')  
-
-job.commit()
+logger.info('Deleted prefix: ' + prefix + '_temp/')
