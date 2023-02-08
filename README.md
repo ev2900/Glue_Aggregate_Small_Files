@@ -9,3 +9,4 @@ This repository provides a PySpark script [Aggregate_Small_Parquet_Files.py](htt
 The script is designed to be run on AWS Glue. To launch a CloudFormation stack that will deploy the Glue job click on the button below
 
 [![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=agg-small-file-glue-job&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml)
+
