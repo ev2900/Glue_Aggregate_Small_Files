@@ -22,8 +22,8 @@ prefix = '<path_to_prefix>' # Do not include trailing /
 target_file_size_in_bytes = 536870912  # 536,870,912 (.5 GB) - 1,073,741,824 (1 GB) is recomended
 
 # Validate configuration information
-s3_bucket_name = s3_bucket_name.rstrip()
-prefix = prefix.rstrip()
+s3_bucket_name = s3_bucket_name.rstrip('/')
+prefix = prefix.strip('/')
 
 # Calculate the target number of files
 import boto3
