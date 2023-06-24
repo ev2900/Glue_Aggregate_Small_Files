@@ -1,5 +1,5 @@
 # Create Small Files in S3
-If you need example small files in an S3 bucket follow these instructions. You may want to generate small files to test the Glue script in this repository that can aggregate small parquet files ie [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/cloud_formation/Aggregate_Small_Parquet_Files.py).
+If you need example small files in an S3 bucket follow these instructions. You may want to generate small files to test the Glue script in this repository that can aggregate small parquet files ie. [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/cloud_formation/Aggregate_Small_Parquet_Files.py).
 
 ## How to create small parquet files
 
