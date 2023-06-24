@@ -1,0 +1,6 @@
+Description: CloudFormation deployment for Glue job that will aggregate small files
+
+Parameters:
+   S3GlueScriptLocation:
+      Type: String
+      Description: "S3 URI ex. s3://glue-assets/Aggregate_Small_Parquet_Files.py"
