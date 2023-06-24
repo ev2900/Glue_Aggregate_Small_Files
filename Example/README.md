@@ -1,0 +1,15 @@
+# Glue Aggregate Small Parquet Files
+
+When storing data in S3 it is important to consider the size of files you store in S3. Parquet files have an ideal file size of 512 MB - 1 GB. Storing data in many small files can decrease the performance of data processing tools ie. Spark. 
+
+This repository provides a PySpark script [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/Aggregate_Small_Parquet_Files.py)  that can consolidate small parquet files in an S3 prefix into larger parquet files.
+
+## How to use the aggregate small parquet files script
+
+The script is designed to be run on AWS Glue. To launch a CloudFormation stack that will deploy the Glue job click on the button below. The CloudFormation stack will prompt you to provide the location of the [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/Aggregate_Small_Parquet_Files.py) file. 
+
+Upload the script to an S3 bucket then click on the button below to create the Glue job
+
+[![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=agg-small-file-glue-job&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml)
+
+After the Glue job is deployed 
