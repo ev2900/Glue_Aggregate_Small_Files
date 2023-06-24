@@ -6,6 +6,46 @@ Parameters:
       Description: "S3 URI ex. s3://glue-assets/Aggregate_Small_Parquet_Files.py"
 
 Resources:
-   # S3 bucket
-   S3Bucket:
-      Type: AWS::S3::Bucket
+
+   # IAM role for Glue job
+   GlueJobRole:
+      Type: AWS::IAM::Role
+      Properties:
+         AssumeRolePolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+               - Effect: "Allow"
+                 Principal:
+                  Service:
+                     - "glue.amazonaws.com"
+                     - "s3.amazonaws.com"
+                 Action:
+                     - "sts:AssumeRole"
+         Path: "/"
+         Policies:
+            - PolicyName: "GlueServiceRole"
+              PolicyDocument:
+               Version: "2012-10-17"
+               Statement:
+                  - Effect: "Allow"
+                    Action: "glue:*"
+                    Resource: "*"
+                  - Effect: "Allow"
+                    Action: "s3:*"
+                    Resource: "*"
+
+   # Glue job
+   GlueJob:
+      Type: "AWS::Glue::Job"
+      Properties:
+         Role: !Ref GlueJobRole
+         Name: "Aggregate_Small_Parquet_Files"
+         MaxRetries: 0
+         GlueVersion: "4.0"
+         NumberOfWorkers: 2
+         WorkerType: "G.2X"
+         MaxCapacity: 100
+         Command: 
+            Name: "glueetl"
+            ScriptLocation: 
+               Ref: S3GlueScriptLocation
