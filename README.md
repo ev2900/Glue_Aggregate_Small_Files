@@ -18,3 +18,12 @@ As you follow the prompts to deploy the CloudFormation stack ensure that you fil
 
 3. Update and run the Glue job
 
+The CloudFormation stack deployed a Glue job named *Aggregate_Small_Parquet_Files*. Navigate to the [Glue console](https://us-east-1.console.aws.amazon.com/gluestudio/home). Select *ETL jobs* and then the *Aggregate_Small_Parquet_Files*
+
+Update <s3_bucket_name> with the name of the S3 bucket with the small files that need to be aggregated
+Update <path_to_prefix> with the path to the prefix of a single partition with small files to aggregate in it
+Optional: update the *total_prefix_size* to the desired target size of the aggregated parquet file(s)
+
+<img width="800" alt="cat_indicies_1" src="https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/README/configuration_information.png">
+
+After you update the S3 bucket name and the path to the prefix, save and run the Glue job. When the Glue job finishes you will have small parquet files in the specified S3 location will have been aggregated.
