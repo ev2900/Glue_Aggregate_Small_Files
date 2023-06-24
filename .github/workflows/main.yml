@@ -30,3 +30,6 @@ jobs:
           
       - name: Upload Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml to S3
         run: aws s3 cp /home/runner/work/Glue_Aggregate_Small_Files/Glue_Aggregate_Small_Files/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml s3://sharkech-public/misc-public/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml
+
+      - name: Upload Glue_Job_Deployment_Create_Small_Parquet_Files.yaml to S3
+        run: aws s3 cp /home/runner/work/Glue_Aggregate_Small_Files/Glue_Aggregate_Small_Files/Example/Glue_Job_Deployment_Create_Small_Parquet_Files.yaml s3://sharkech-public/misc-public/Glue_Job_Deployment_Create_Small_Parquet_Files.yaml
