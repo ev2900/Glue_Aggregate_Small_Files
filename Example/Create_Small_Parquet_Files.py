@@ -40,6 +40,6 @@ sampleDF = spark.createDataFrame(data=data,schema=schema)
 sampleDF = sampleDF.coalesce(6)
 
 # Write the sample data frame to S3 as 6 seperate small parquet files
-sampleDF.write.parquet("s3://fdfsd4534/sampleDF/prefix1/", mode = "overwrite")
+sampleDF.write.parquet("s3://<s3_bucket_name>/sampleDF/prefix1/", mode = "overwrite")
 
 job.commit()
