@@ -7,4 +7,4 @@ If you need example small files in an S3 bucket follow these instructions. You m
 
 2. Run the CloudFormation stack below
 
-[![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=agg-small-file-glue-job&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/Aggregate_Small_Parquet_File_Glue_Job_Deployment.yaml)
+[![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=create-small-files-glue&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/Glue_Job_Deployment_Create_Small_Parquet_Files.yaml)
