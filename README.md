@@ -15,3 +15,6 @@ This repository provides a PySpark script [Aggregate_Small_Parquet_Files.py](htt
 As you follow the prompts to deploy the CloudFormation stack ensure that you fill out the *S3GlueScriptLocation* parameter with the S3 URI of the [Create_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/cloud_formation/Example/Create_Small_Parquet_Files.py) that you uploaded to a S3 bucket in the first step
 
 <img width="800" alt="cat_indicies_1" src="https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/README/cloudformation-parameter.png">
+
+3. Update and run the Glue job
+
