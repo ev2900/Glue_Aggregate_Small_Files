@@ -6,6 +6,8 @@ This repository provides a PySpark script [Aggregate_Small_Parquet_Files.py](htt
 
 ## How to run the Glue job to aggregate small parquet files
 
+*Note* if you are testing the [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/Aggregate_Small_Parquet_Files.py) and need to generate small parquet files as test data. You can follow the instructions in the [Example](https://github.com/ev2900/Glue_Aggregate_Small_Files/tree/main/Example) folder to create small file test data.
+
 1. Upload  the [Aggregate_Small_Parquet_Files.py](https://github.com/ev2900/Glue_Aggregate_Small_Files/blob/main/Aggregate_Small_Parquet_Files.py) file to a S3 bucket
 
 2. Run the CloudFormation stack below to create a Glue job that will generate small parquet files
