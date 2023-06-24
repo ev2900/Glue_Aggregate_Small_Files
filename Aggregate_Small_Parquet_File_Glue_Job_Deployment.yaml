@@ -42,7 +42,6 @@ Resources:
          Name: "Aggregate_Small_Parquet_Files"
          MaxRetries: 0
          GlueVersion: "4.0"
-         WorkerType: "G.2X"
          MaxCapacity: 100
          Command: 
             Name: "glueetl"
