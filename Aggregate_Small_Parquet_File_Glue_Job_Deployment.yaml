@@ -4,3 +4,8 @@ Parameters:
    S3GlueScriptLocation:
       Type: String
       Description: "S3 URI ex. s3://glue-assets/Aggregate_Small_Parquet_Files.py"
+
+Resources:
+   # S3 bucket
+   S3Bucket:
+      Type: AWS::S3::Bucket
