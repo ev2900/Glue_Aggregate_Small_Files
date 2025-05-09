@@ -1,6 +1,6 @@
 # Glue Aggregate Small Parquet Files
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-31-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-4407-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-1394-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-31-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-4441-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-1394-green">
 
 When storing data in S3 it is important to consider the size of files you store in S3. Parquet files have an ideal file size of 512 MB - 1 GB. Storing data in many small files can decrease the performance of data processing tools ie. Spark.
 
